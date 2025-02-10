@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ke477soidqaa"]
+
+[ext_resource type="Texture2D" uid="uid://bk3ycxf4kab5n" path="res://assets/bunny-Sheet.png" id="1_ekt0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tah0"]
+size = Vector2(31, 23)
+
+[node name="Animal1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_ekt0y")
+region_enabled = true
+region_rect = Rect2(13.9916, 334.627, 34.0381, 32.4113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_3tah0")
