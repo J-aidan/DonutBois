@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jt606oryttns"]
+[gd_scene load_steps=15 format=3 uid="uid://jt606oryttns"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_gt4om"]
 [ext_resource type="Texture2D" uid="uid://wl5tx68pyie4" path="res://assets/Tileset 1.0/tileset itens.png" id="2_oi0gm"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dal61xnmujkxl" path="res://scenes/animal_1.tscn" id="4_nf0lk"]
 [ext_resource type="PackedScene" uid="uid://c2dnp5ioqi18y" path="res://scenes/Muffin.tscn" id="5_varft"]
 [ext_resource type="PackedScene" uid="uid://3mhty3ew0xbv" path="res://scenes/animal_2.tscn" id="6_w57v1"]
+[ext_resource type="Texture2D" uid="uid://b6qub4jb8ywsi" path="res://assets/Foods/food_31.png" id="8_orapt"]
+[ext_resource type="Texture2D" uid="uid://e72ei815emko" path="res://assets/Foods/food_27.png" id="9_vsqtl"]
+[ext_resource type="AudioStream" uid="uid://imf5ykpx6jx0" path="res://assets/platformer_assets/brackeys_platformer_assets/sounds/coin.wav" id="10_pnmc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ii3h"]
 texture = ExtResource("2_vwx5g")
@@ -258,3 +261,31 @@ collision_mask = 9
 [node name="Animal2" parent="." instance=ExtResource("6_w57v1")]
 position = Vector2(71, 48)
 collision_mask = 9
+
+[node name="Food31" type="Sprite2D" parent="."]
+position = Vector2(-26, -25)
+scale = Vector2(0.833333, 0.864333)
+texture = ExtResource("8_orapt")
+
+[node name="DonutLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -37.0
+offset_right = -10.0
+offset_bottom = -14.0
+text = "0"
+
+[node name="Food27" type="Sprite2D" parent="."]
+position = Vector2(28, -25)
+scale = Vector2(0.883, 0.883)
+texture = ExtResource("9_vsqtl")
+
+[node name="MuffinLabel" type="Label" parent="."]
+offset_left = 33.0
+offset_top = -37.0
+offset_right = 43.0
+offset_bottom = -14.0
+text = "0"
+
+[node name="CoinPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pnmc1")
+bus = &"SFX"
