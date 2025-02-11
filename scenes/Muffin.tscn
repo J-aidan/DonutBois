@@ -1,25 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://be3ad5n8p26ul"]
+[gd_scene load_steps=5 format=3 uid="uid://c2dnp5ioqi18y"]
 
-[ext_resource type="Script" path="res://scripts/donut.gd" id="1_lr44m"]
-[ext_resource type="Texture2D" uid="uid://b6qub4jb8ywsi" path="res://assets/Foods/food_31.png" id="1_ocms2"]
+[ext_resource type="Script" path="res://scripts/muffin.gd" id="1_i8221"]
+[ext_resource type="Texture2D" uid="uid://e72ei815emko" path="res://assets/Foods/food_27.png" id="2_qmp53"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ut7e6"]
-radius = 4.99939
-height = 12.0
+radius = 4.99938
+height = 9.99876
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kibje"]
 radius = 4.99938
-height = 13.9983
+height = 11.9985
 
-[node name="Donut" type="CharacterBody2D"]
+[node name="Muffin" type="CharacterBody2D"]
 collision_mask = 5
-script = ExtResource("1_lr44m")
+script = ExtResource("1_i8221")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ocms2")
+texture = ExtResource("2_qmp53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.49012e-08, 0.999997)
+position = Vector2(2.27374e-13, 1)
 rotation = -1.55509
 shape = SubResource("CapsuleShape2D_ut7e6")
 
@@ -27,7 +27,7 @@ shape = SubResource("CapsuleShape2D_ut7e6")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
+position = Vector2(-4.76837e-07, 1)
 rotation = 1.55509
 shape = SubResource("CapsuleShape2D_kibje")
 

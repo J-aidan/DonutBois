@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://jt606oryttns"]
+[gd_scene load_steps=12 format=3 uid="uid://jt606oryttns"]
 
+[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_gt4om"]
 [ext_resource type="Texture2D" uid="uid://wl5tx68pyie4" path="res://assets/Tileset 1.0/tileset itens.png" id="2_oi0gm"]
 [ext_resource type="Texture2D" uid="uid://c4086ww2vrud0" path="res://assets/Tileset 1.0/tilseset outside.png" id="2_vwx5g"]
 [ext_resource type="PackedScene" uid="uid://be3ad5n8p26ul" path="res://scenes/Donut.tscn" id="4_3vvkp"]
-[ext_resource type="PackedScene" uid="uid://ke477soidqaa" path="res://scenes/animal_1.tscn" id="4_nf0lk"]
+[ext_resource type="PackedScene" uid="uid://dal61xnmujkxl" path="res://scenes/animal_1.tscn" id="4_nf0lk"]
+[ext_resource type="PackedScene" uid="uid://c2dnp5ioqi18y" path="res://scenes/Muffin.tscn" id="5_varft"]
+[ext_resource type="PackedScene" uid="uid://3mhty3ew0xbv" path="res://scenes/animal_2.tscn" id="6_w57v1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ii3h"]
 texture = ExtResource("2_vwx5g")
@@ -216,6 +219,7 @@ sources/1 = SubResource("TileSetAtlasSource_211gv")
 distance = -65.0
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource("1_gt4om")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sic4b")
@@ -230,19 +234,27 @@ layer_0/tile_data = PackedInt32Array(-327679, 524288, 0, -262143, 65537, 3, 1966
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Animal1" parent="." instance=ExtResource("4_nf0lk")]
-position = Vector2(72, 56)
-scale = Vector2(0.5, 0.5)
-
-[node name="Donut" parent="." instance=ExtResource("4_3vvkp")]
-position = Vector2(8, 7)
-
 [node name="AnimalFloor" type="StaticBody2D" parent="."]
 position = Vector2(0, -2)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimalFloor"]
 position = Vector2(6, -63)
 scale = Vector2(2, 2)
 shape = SubResource("WorldBoundaryShape2D_iixj3")
+
+[node name="Donut" parent="." instance=ExtResource("4_3vvkp")]
+position = Vector2(8, 7)
+
+[node name="Muffin" parent="." instance=ExtResource("5_varft")]
+position = Vector2(8, 8)
+collision_layer = 8
+
+[node name="Animal1" parent="." instance=ExtResource("4_nf0lk")]
+position = Vector2(-54, 48)
+collision_mask = 9
+
+[node name="Animal2" parent="." instance=ExtResource("6_w57v1")]
+position = Vector2(71, 48)
+collision_mask = 9

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var donut_sprite = $Sprite2D
+@onready var muffin_sprite = $Sprite2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = 0.0
@@ -38,27 +38,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D and body != self and body.name != "Muffin":
+	if body is CharacterBody2D and body != self and body.name != "Donut":
 		var game_controller = get_tree().root.get_node("GameScene")
 		direction = 0.0
 		saved_direction = 0.0
 		moved = false
 		print("entered" + body.name)
-		if body.name == "Animal1":
-			#bunny eat
-			var animated_sprite = get_tree().root.get_node("GameScene/Animal1/AnimatedSprite2D")
+		if body.name == "Animal2":
+			#kitten eat
+			var animated_sprite = get_tree().root.get_node("GameScene/Animal2/AnimatedSprite2D")
 			animated_sprite.animation = "eat"
 			
 			#update counts
-			game_controller.increment_donuts()
+			game_controller.increment_muffins()
 			
-			donut_sprite.visible = false
+			muffin_sprite.visible = false
 			
 			#wait
 			await get_tree().create_timer(1.0).timeout
-			donut_sprite.visible = true
+			muffin_sprite.visible = true
 			animated_sprite.animation = "idle"
 		
-		game_controller.create_food()
+		game_controller.create_food()	
 			
 	pass # Replace with function body.
