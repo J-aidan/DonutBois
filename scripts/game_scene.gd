@@ -15,6 +15,18 @@ var donut_multiplier := 1
 var muffin_count := 0
 var muffin_multiplier := 1
 
+var bar_count := 0
+var bar_multiplier :=1
+
+var cream_count := 0
+var cream_multiplier := 1
+
+var cherry_count := 0
+var cherry_multiplier :=1
+
+var grape_count := 0
+var grape_multiplier := 1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,3 +74,28 @@ func create_food():
 		donut.visible = false
 		muffin.position.x = muffin_positionx
 		muffin.position.y = muffin_positiony
+		
+func donuts_to_bars() -> void:
+	donut_count -= 5
+	bar_count += 1
+	print("bar bought with donuts")
+	pass
+	
+func muffins_to_icecream() -> void:
+	muffin_count -= 5
+	cream_count += 1
+	print("icecream bought with muffins")
+	pass
+
+func bars_to_cherries() -> void:
+	bar_count -= 5
+	cherry_count += 1
+	print("cherry bought with bars")
+	pass
+	
+func cream_to_grapes() -> void:
+	cream_count -= 5
+	grape_count += 1
+	print("grape bought with cream")
+	pass
+	
