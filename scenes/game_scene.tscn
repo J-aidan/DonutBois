@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jt606oryttns"]
+[gd_scene load_steps=21 format=3 uid="uid://jt606oryttns"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_gt4om"]
 [ext_resource type="Texture2D" uid="uid://wl5tx68pyie4" path="res://assets/Tileset 1.0/tileset itens.png" id="2_oi0gm"]
@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://b6qub4jb8ywsi" path="res://assets/Foods/food_31.png" id="8_orapt"]
 [ext_resource type="Texture2D" uid="uid://e72ei815emko" path="res://assets/Foods/food_27.png" id="9_vsqtl"]
 [ext_resource type="AudioStream" uid="uid://imf5ykpx6jx0" path="res://assets/platformer_assets/brackeys_platformer_assets/sounds/coin.wav" id="10_pnmc1"]
+[ext_resource type="Texture2D" uid="uid://cppeq3r602rwy" path="res://assets/Foods/food_11.png" id="11_e5pvf"]
+[ext_resource type="Texture2D" uid="uid://dhm1qp7vgevha" path="res://assets/Foods/food_15.png" id="12_24eeh"]
+[ext_resource type="Texture2D" uid="uid://bgt4072g7gqy3" path="res://assets/Foods/food_16.png" id="13_6byj1"]
+[ext_resource type="Texture2D" uid="uid://br4yor5uk37ib" path="res://assets/extra_buttons/multiplier.png" id="13_f4le6"]
+[ext_resource type="Texture2D" uid="uid://dem8a34nqidri" path="res://assets/Foods/food_25.png" id="14_pbmnh"]
+[ext_resource type="Texture2D" uid="uid://cv78nteq4wrjb" path="res://assets/extra_buttons/speed.png" id="15_sgxw5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ii3h"]
 texture = ExtResource("2_vwx5g")
@@ -289,3 +295,201 @@ text = "0"
 [node name="CoinPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_pnmc1")
 bus = &"SFX"
+
+[node name="CreamPurchase" type="Button" parent="."]
+visible = false
+offset_left = 115.0
+offset_top = 3.0
+offset_right = 123.0
+offset_bottom = 11.0
+focus_mode = 0
+disabled = true
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CreamPurchase"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("11_e5pvf")
+
+[node name="CreamLabel" type="Label" parent="CreamPurchase"]
+offset_left = -8.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 11
+text = "0
+"
+
+[node name="GrapePurchase" type="Button" parent="."]
+visible = false
+offset_left = 115.0
+offset_top = 14.0
+offset_right = 123.0
+offset_bottom = 22.0
+focus_mode = 0
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="GrapePurchase"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 10.0
+offset_bottom = 11.0
+texture = ExtResource("12_24eeh")
+
+[node name="GrapeLabel" type="Label" parent="GrapePurchase"]
+offset_left = -8.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 11
+text = "0"
+
+[node name="MuffinMultiplier" type="Button" parent="."]
+visible = false
+offset_left = 115.0
+offset_top = 39.0
+offset_right = 123.0
+offset_bottom = 47.0
+focus_mode = 0
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="MuffinMultiplier"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("9_vsqtl")
+
+[node name="TextureRect2" type="TextureRect" parent="MuffinMultiplier"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 15.0
+offset_bottom = 9.0
+texture = ExtResource("13_f4le6")
+expand_mode = 1
+
+[node name="CherryPurchase" type="Button" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = 14.0
+offset_right = -100.0
+offset_bottom = 22.0
+focus_mode = 0
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CherryPurchase"]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 10.0
+offset_bottom = 9.0
+texture = ExtResource("13_6byj1")
+
+[node name="CherryLabel" type="Label" parent="CherryPurchase"]
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 19.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 11
+text = "0"
+
+[node name="DonutMultiplier" type="Button" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = 40.0
+offset_right = -100.0
+offset_bottom = 48.0
+focus_mode = 0
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="DonutMultiplier"]
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 10.0
+offset_bottom = 8.0
+texture = ExtResource("8_orapt")
+
+[node name="TextureRect2" type="TextureRect" parent="DonutMultiplier"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 17.0
+offset_bottom = 8.0
+texture = ExtResource("13_f4le6")
+expand_mode = 1
+
+[node name="DonutSpeed" type="Button" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = 26.0
+offset_right = -100.0
+offset_bottom = 34.0
+focus_mode = 0
+disabled = true
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="DonutSpeed"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("8_orapt")
+
+[node name="TextureRect2" type="TextureRect" parent="DonutSpeed"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 18.0
+offset_bottom = 13.0
+texture = ExtResource("15_sgxw5")
+expand_mode = 1
+
+[node name="BarPurchase" type="Button" parent="."]
+visible = false
+offset_left = -108.0
+offset_top = 3.0
+offset_right = -100.0
+offset_bottom = 11.0
+focus_mode = 0
+disabled = true
+
+[node name="BarLabel" type="Label" parent="BarPurchase"]
+offset_left = 10.0
+offset_top = -4.0
+offset_right = 17.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 11
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="BarPurchase"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("14_pbmnh")
+
+[node name="MuffinSpeed" type="Button" parent="."]
+visible = false
+offset_left = 115.0
+offset_top = 26.0
+offset_right = 123.0
+offset_bottom = 34.0
+focus_mode = 0
+disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="MuffinSpeed"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("9_vsqtl")
+
+[node name="TextureRect2" type="TextureRect" parent="MuffinSpeed"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 16.0
+offset_bottom = 12.0
+texture = ExtResource("15_sgxw5")
+expand_mode = 1

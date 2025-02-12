@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var muffin_sprite = $Sprite2D
 
-const SPEED = 100.0
 const JUMP_VELOCITY = 0.0
+
+var SPEED = 100.0
 
 var direction = 0.0
 
